@@ -1,3 +1,7 @@
 /venv
 
 /trabajos/results
+__pycache__/
+*.py[cod]
+
+/trabajos/trabajos/spiders/__pycache__

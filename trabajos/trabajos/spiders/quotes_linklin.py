@@ -8,7 +8,7 @@ class QuotesSpider(scrapy.Spider):
     ]
 
     custom_settings = {
-        'FEED_URI': 'results/scifianimes.cvs',
+        'FEED_URI': 'results/linkelin.cvs',
         'FEED_FORMAT': 'csv',
         'ROBOTSTXT_OBEY': True
     }
