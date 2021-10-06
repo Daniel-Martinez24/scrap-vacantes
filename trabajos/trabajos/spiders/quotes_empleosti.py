@@ -23,7 +23,7 @@ class QuotesSpider(scrapy.Spider):
     def parse_pages(self, response):
         titles = response.xpath('//h1[@class="section-title"]/text()').getall()
         salary = response.xpath('//*[@id="vacancy-content"]/ul/li[1]/p[@class="gray-subarea-title"]/text()').getall()
-        place = response.xpath('//*[@id="vacancy-content"]/ul/li[2]/p[@class="gray-subarea-title"]/text()').getall()
+        place = response.xpath('//*[@id="vacancy-content"]/ul/li[2]/p[@class="gray-subarea-title"]/a/text()').getall()
         type = response.xpath('//*[@id="vacancy-content"]/ul/li[3]/p[@class="gray-subarea-title"]/text()').getall()
         english = response.xpath('//*[@id="vacancy-content"]/ul/li[4]/p[@class="gray-subarea-title"]/text()').getall()
         
