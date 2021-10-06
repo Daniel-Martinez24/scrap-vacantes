@@ -27,6 +27,7 @@ class QuotesSpider(scrapy.Spider):
         type = response.xpath('//*[@id="vacancy-content"]/ul/li[3]/p[@class="gray-subarea-title"]/text()').get()
         english = response.xpath('//*[@id="vacancy-content"]/ul/li[4]/p[@class="gray-subarea-title"]/text()').get()
         company = response.xpath('//*[@id="searchable-enterprise"]/text()').get()
+        description =  response.xpath('//*[@id="vacancy-description"]').get()
         
 
         # scores = [score.strip() for score in scores ]
@@ -40,6 +41,7 @@ class QuotesSpider(scrapy.Spider):
             'tipo_trabajo': type,
             'nivel_ingles': english,
             'empresa' : company,
+            'descripcion' : description,
             # 'score': scores[posicion],
             # 'date': dates[posicion]
         }
