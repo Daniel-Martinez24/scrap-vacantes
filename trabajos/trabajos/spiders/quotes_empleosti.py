@@ -14,6 +14,16 @@ class QuotesSpider(scrapy.Spider):
     }
 
     def parse(self, response):
+        '''Obtener la lista de pag'''
+        list_pages = []
+        listaDePaginas = []
+        for i in range(1, 30):
+            list_pages.append('https://empleosti.com.mx/empleos??page=' + str(i))
+
+        '''
+        for pages in list_pages:
+            response.xpath('//ul[@class="job-eti"]//li/a/@href').getall()
+        '''  
         
         listaDePaginas = response.xpath('//ul[@class="job-eti"]//li/a/@href').getall()
         
