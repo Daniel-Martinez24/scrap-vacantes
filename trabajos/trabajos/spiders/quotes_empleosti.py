@@ -29,11 +29,6 @@ class QuotesSpider(scrapy.Spider):
         company = response.xpath('//*[@id="searchable-enterprise"]/text()').get()
         description =  response.xpath('//*[@id="vacancy-description"]').get()
         
-
-        # scores = [score.strip() for score in scores ]
-        # dates = [date.strip() for date in dates]
-        
-        # for posicion in range(len(english)):
         yield {
             'titulo': titles,
             'salario': salary,
@@ -42,6 +37,4 @@ class QuotesSpider(scrapy.Spider):
             'nivel_ingles': english,
             'empresa' : company,
             'descripcion' : description,
-            # 'score': scores[posicion],
-            # 'date': dates[posicion]
         }
